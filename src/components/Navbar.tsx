@@ -41,44 +41,16 @@ export function Navbar({
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter leading-none font-serif text-[#1A1A1A]">
                 CAN'T SAY NO
               </h1>
-              <span className="font-sans text-[10px] uppercase font-bold tracking-[0.2em] px-2 py-0.5 border border-[#1A1A1A] bg-white text-[#1A1A1A]">
-                IOU PROTOCOL
-              </span>
+
             </div>
             <p className="text-[11px] sm:text-xs uppercase tracking-widest font-sans font-bold text-[#1A1A1A]/60 mt-1.5">
-              The Unavoidable Favor Exchange System • Firebase & Vercel Ready
+              The Unavoidable Favor Exchange System
             </p>
           </div>
 
           {/* Actions & Creator Profile */}
           <div className="flex items-center flex-wrap gap-2.5 sm:gap-3 self-start sm:self-end">
-            {/* Vercel Deploy Helper Button */}
-            <button
-              id="nav-vercel-deploy-btn"
-              onClick={onOpenVercelModal}
-              className="flex items-center space-x-1.5 px-3 py-2 text-xs font-sans font-bold uppercase tracking-wider transition-all border border-[#1A1A1A] bg-white hover:bg-[#EAE9E4] text-[#1A1A1A] cursor-pointer"
-              title="Vercel Deployment Guide & Environment Variables"
-            >
-              <span className="text-[11px] font-mono font-black">▲</span>
-              <span className="hidden md:inline">Deploy on Vercel</span>
-              <span className="md:hidden">Vercel</span>
-            </button>
 
-            {/* Recipient Simulator Quick Preview */}
-            <button
-              id="nav-recipient-simulator-btn"
-              onClick={onOpenSimulator}
-              className={`flex items-center space-x-1.5 px-3 py-2 text-xs font-sans font-bold uppercase tracking-wider transition-all border border-[#1A1A1A] cursor-pointer ${
-                isSimulatorOpen
-                  ? 'bg-[#1A1A1A] text-white shadow-[2px_2px_0px_0px_rgba(26,26,26,1)]'
-                  : 'bg-white text-[#1A1A1A] hover:bg-[#EAE9E4]'
-              }`}
-              title="Test the recipient experience in a simulated mobile frame"
-            >
-              <Smartphone className="w-3.5 h-3.5" />
-              <span className="hidden lg:inline">Test Recipient View</span>
-              <span className="lg:hidden">Preview</span>
-            </button>
 
             {/* Create Card Button */}
             <button
@@ -87,7 +59,7 @@ export function Navbar({
               className="flex items-center space-x-1.5 px-4 sm:px-5 py-2 text-xs sm:text-sm font-sans font-bold uppercase tracking-widest bg-[#1A1A1A] text-white hover:bg-[#333] transition-all editorial-shadow-sm active:translate-x-0.5 active:translate-y-0.5 cursor-pointer"
             >
               <Plus className="w-4 h-4" />
-              <span>+ Create Card</span>
+              <span>Create Card</span>
             </button>
 
             {/* Auth / Account Profile Button */}
@@ -150,16 +122,6 @@ export function Navbar({
                     </div>
 
                     <div className="py-1">
-                      <button
-                        onClick={() => {
-                          setShowUserDropdown(false);
-                          onOpenVercelModal();
-                        }}
-                        className="w-full text-left px-4 py-2 text-xs font-sans font-bold uppercase tracking-wider text-[#1A1A1A] hover:bg-[#F5F5F0] flex items-center space-x-2 transition-colors cursor-pointer"
-                      >
-                        <span className="font-mono font-black text-xs">▲</span>
-                        <span>Vercel Deploy Settings</span>
-                      </button>
 
                       <button
                         onClick={() => {

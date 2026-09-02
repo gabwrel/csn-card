@@ -505,7 +505,7 @@ export default function App() {
               className="flex items-center justify-center space-x-1.5 px-5 py-2.5 bg-[#1A1A1A] text-white hover:bg-[#333] font-sans font-bold uppercase text-xs tracking-widest shadow-[2px_2px_0px_0px_rgba(26,26,26,1)] active:translate-x-0.5 active:translate-y-0.5 transition-all shrink-0 cursor-pointer"
             >
               <Plus className="w-4 h-4" />
-              <span>+ Issue New Favor Card</span>
+              <span>Issue New Favor Card</span>
             </button>
           </div>
         </div>

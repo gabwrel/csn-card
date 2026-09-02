@@ -1,0 +1,54 @@
+[
+  {
+    "id": "card_unassigned_demo",
+    "ownerId": "usr_default_alex",
+    "ownerName": "Alex Rivers",
+    "recipientName": "Sarah Jenkins",
+    "recipientNote": "A special favor I can redeem whenever I need help!",
+    "status": "unassigned",
+    "task": null,
+    "createdAt": "2026-08-31T16:36:03.139Z",
+    "themeColor": "amber"
+  },
+  {
+    "id": "card_pending_demo",
+    "ownerId": "usr_default_alex",
+    "ownerName": "Alex Rivers",
+    "recipientName": "Marcus Vance",
+    "recipientNote": "Thanks for promising you would never say no.",
+    "status": "pending_redemption",
+    "task": "Cover my 4-hour shift this coming Sunday afternoon at the community coffee bar.",
+    "taskDeadline": "2026-09-05T16:36:03.139Z",
+    "createdAt": "2026-08-29T16:36:03.139Z",
+    "loadedAt": "2026-09-02T11:36:03.139Z",
+    "themeColor": "indigo"
+  },
+  {
+    "id": "card_awaiting_demo",
+    "ownerId": "usr_default_alex",
+    "ownerName": "Alex Rivers",
+    "recipientName": "Liam O'Connor",
+    "recipientNote": "You lost the bet, so this card is active!",
+    "status": "awaiting_confirmation",
+    "task": "Give my Subaru Outback a thorough foam wash and interior vacuum.",
+    "taskDeadline": "2026-09-07T16:36:03.139Z",
+    "createdAt": "2026-08-27T16:36:03.139Z",
+    "loadedAt": "2026-09-01T16:36:03.139Z",
+    "acceptedAt": "2026-09-02T14:36:03.139Z",
+    "themeColor": "emerald"
+  },
+  {
+    "id": "card_used_demo",
+    "ownerId": "usr_default_alex",
+    "ownerName": "Alex Rivers",
+    "recipientName": "Emma Watson",
+    "recipientNote": "Redeemed during moving week.",
+    "status": "used",
+    "task": "Bake your famous 3-cheese lasagna and deliver it hot for dinner.",
+    "createdAt": "2026-08-21T16:36:03.139Z",
+    "loadedAt": "2026-08-23T16:36:03.139Z",
+    "acceptedAt": "2026-08-24T16:36:03.139Z",
+    "confirmedAt": "2026-08-25T16:36:03.139Z",
+    "themeColor": "rose"
+  }
+]

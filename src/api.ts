@@ -215,17 +215,23 @@ export async function createCard(params: {
     ownerId,
     ownerName,
     recipientName: params.recipientName.trim(),
-    recipientNote: params.recipientNote?.trim() || undefined,
     status: 'unassigned',
     task: null,
     createdAt: new Date().toISOString(),
     themeColor: params.themeColor || 'amber',
   };
 
-  await setDoc(doc(db, 'cards', cardId), {
+  const recipientNote = params.recipientNote?.trim();
+  if (recipientNote) {
+    newCard.recipientNote = recipientNote;
+  }
+
+  const docData: Record<string, unknown> = {
     ...newCard,
     ownerEmail,
-  });
+  };
+
+  await setDoc(doc(db, 'cards', cardId), docData);
 
   return newCard;
 }
