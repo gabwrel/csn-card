@@ -1,0 +1,6 @@
+{
+  "name": "Can't Say No",
+  "description": "Digital IOU favor cards with shareable links and QR codes where recipients have only one option: Accept.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,69 @@
+{
+  "entities": {
+    "Card": {
+      "title": "Favor Card",
+      "description": "An irrevocable IOU favor voucher issued by a creator to a recipient",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier of the favor card" },
+        "ownerId": { "type": "string", "description": "UID of the creator/obligor" },
+        "ownerName": { "type": "string", "description": "Display name of the card creator" },
+        "ownerEmail": { "type": "string", "description": "Email of the card creator" },
+        "recipientName": { "type": "string", "description": "Name of the designated beneficiary" },
+        "recipientNote": { "type": "string", "description": "Personal message from the creator" },
+        "status": {
+          "type": "string",
+          "enum": ["unassigned", "pending_redemption", "awaiting_confirmation", "used", "revoked"],
+          "description": "Current status of the favor card"
+        },
+        "task": { "type": "string", "description": "The specific task demanded by the recipient" },
+        "taskDeadline": { "type": "string", "description": "Optional deadline for completion (ISO date string)" },
+        "createdAt": { "type": "string", "description": "ISO timestamp when the card was minted" },
+        "loadedAt": { "type": "string", "description": "ISO timestamp when favor was demanded" },
+        "acceptedAt": { "type": "string", "description": "ISO timestamp when obligation was acknowledged" },
+        "confirmedAt": { "type": "string", "description": "ISO timestamp when completed" },
+        "themeColor": {
+          "type": "string",
+          "enum": ["amber", "indigo", "emerald", "rose", "stone"],
+          "description": "Visual theme of the card voucher"
+        }
+      },
+      "required": ["id", "ownerId", "ownerName", "recipientName", "status", "createdAt"]
+    },
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "User profile for logged in creator",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "providerId": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "lastLoginAt": { "type": "string" }
+      },
+      "required": ["uid", "displayName"]
+    }
+  },
+  "firestore": {
+    "/cards/{cardId}": {
+      "schema": "Card",
+      "description": "Favor cards collection. Publicly readable so recipients can scan QR or view link. Writable by owners and recipients cashing in.",
+      "allow": {
+        "read": "true",
+        "create": "request.auth != null",
+        "update": "true",
+        "delete": "request.auth != null && resource.data.ownerId == request.auth.uid"
+      }
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile records",
+      "allow": {
+        "read": "true",
+        "write": "request.auth != null && request.auth.uid == userId"
+      }
+    }
+  }
+}

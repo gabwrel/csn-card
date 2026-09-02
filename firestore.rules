@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cards/{cardId} {
+      // Cards are publicly readable so recipients can scan the QR voucher
+      allow read: if true;
+
+      // Authenticated users can mint new favor cards
+      allow create: if request.auth != null;
+
+      // Recipients can cash in their favor or complete, owners can confirm or revoke
+      allow update: if true;
+
+      // Only the owner can delete their cards
+      allow delete: if request.auth != null && (
+        resource.data.ownerId == request.auth.uid ||
+        !('ownerId' in resource.data)
+      );
+    }
+
+    match /users/{userId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
