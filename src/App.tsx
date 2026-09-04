@@ -38,6 +38,7 @@ import {
   LogIn,
 } from 'lucide-react';
 
+
 export default function App() {
   // Navigation state (for URL path routing)
   const [currentPath, setCurrentPath] = useState<string>(() => window.location.pathname);
@@ -320,8 +321,9 @@ export default function App() {
             </h1>
 
             <p className="mt-3 text-sm sm:text-base font-serif text-[#1A1A1A]/80 leading-relaxed max-w-2xl">
-              Gift a card now without deciding the task up front. When you're ready to cash it in, attach your favor.
-              The recipient sees only one option: <span className="font-bold text-[#1A1A1A]">"I Accept"</span>. Once confirmed done, it's permanently locked.
+              Give a card now without deciding the task up front. When your friend is ready to cash it in,
+              they'll attach the favor <span className="font-bold text-[#1A1A1A]">for you</span>.
+              You'll see only one option: <span className="font-bold text-[#1A1A1A]">"I Accept"</span>. Once you confirm it's done, it's permanently locked.
             </p>
 
             {/* Lifecycle Steps Ribbon */}
