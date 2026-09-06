@@ -343,7 +343,7 @@ export function CreateCardModal({
                 <span>Print Voucher</span>
               </button>
 
-              <button
+              {/* <button
                 type="button"
                 onClick={() => {
                   onOpenSimulatorForCard(createdCard.id);
@@ -353,7 +353,7 @@ export function CreateCardModal({
               >
                 <ExternalLink className="w-3.5 h-3.5" />
                 <span>Test Recipient</span>
-              </button>
+              </button> */}
             </div>
 
             <div className="pt-2 text-center">
